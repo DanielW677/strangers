@@ -3,6 +3,7 @@ import { useOutletContext, useParams } from "react-router-dom";
 
 const BigPost = () => {
     const postData = useOutletContext();
+    const bigData = postData[0];
     // console.log('we are in detailed post', postData)
 
     const { id } = useParams();
@@ -10,11 +11,11 @@ const BigPost = () => {
     // console.log(id)
     // console.log('this is itemsell', itemSell)
     
-    const outParams = useParams().id;
+    // const outParams = useParams().id;
     // console.log('this is params', useParams())
     console.log('other params', id)
     
-    const specificPost = postData[id];
+    const specificPost = bigData[id];
     console.log('this is post', specificPost);
     return (
         <div>

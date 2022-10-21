@@ -20,7 +20,7 @@ const Homepage = () => {
     const [ profile, setProfile ] = useState();
     useEffect(() => { 
     async function getProfData () {
-        console.log('profile hook')
+        // console.log('profile hook')
         try {
             const fetchProfile = await fetch('https://strangers-things.herokuapp.com/api/2209-ftb-mt-web-ft/users/me', {
                 headers: {
@@ -28,11 +28,11 @@ const Homepage = () => {
                     'Authorization': `Bearer ${localStorage.getItem('token')}`
                 },
             })
-            console.log(fetchProfile)
+            // console.log(fetchProfile)
             const newData = await fetchProfile.json();
-            console.log('This is translateted data', newData.data)
+            // console.log('This is translateted data', newData.data)
             setProfile(newData.data)
-            console.log('This is useState', profile)
+            // console.log('This is useState', profile)
         } catch (error) {
             console.log(error) 
         }
@@ -45,7 +45,7 @@ const Homepage = () => {
         <div>
             <Navbar />
             <div>
-                <Outlet context={[itemSell, profile]} />
+                <Outlet context={[itemSell, profile,]} />
             </div>
         </div>
     )

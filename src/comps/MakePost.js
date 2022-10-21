@@ -1,12 +1,14 @@
 import React, { useState } from "react";
-
+import { useNavigate } from "react-router-dom";
 const MakePostForm = () => {
     const [title, setTitle] = useState();
     const [desc, setDesc] = useState();
     const [price, setPrice] = useState();
+    const Navigate = useNavigate();
     async function postSubmit(event) {
         event.preventDefault();
         try {
+          
             const fetchResponse = fetch('https://strangers-things.herokuapp.com/api/2209-ftb-mt-web-ft/posts' , {
                 method: 'POST',
                 headers: {
