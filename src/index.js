@@ -10,6 +10,10 @@ import RegisterForm from './comps/Register';
 import LoginForm from './comps/Login';
 import Page from './comps/Index';
 import MakePostForm from './comps/MakePost';
+import ProfilePost from './comps/ProfilePost';
+import editForm from './comps/editPost';
+import Logout from './comps/Logout';
+import MessageUser from './comps/MessageUser';
 const route = createBrowserRouter([
     {
         path: "/",
@@ -34,6 +38,14 @@ const route = createBrowserRouter([
                 element: <Profile />
             },
             {
+                path: '/profile/:id',
+                element: <ProfilePost />
+            },
+            {
+                path: '/profile/:id/msg',
+                element: <MessageUser />
+            },
+            {
                 path: '/profile/newpost',
                 element: <MakePostForm />
             },
@@ -44,6 +56,10 @@ const route = createBrowserRouter([
             {
                 path: '/login',
                 element: <LoginForm />
+            },
+            {
+                path: '/logout',
+                element: <Logout />
             }
 
             

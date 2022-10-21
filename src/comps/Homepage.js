@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "./Navbar";
-import { Outlet } from "react-router";
+import { Outlet, useParams } from "react-router";
 
 const Homepage = () => {
     const [ itemSell, setItemSell] = useState();
@@ -40,12 +40,18 @@ const Homepage = () => {
     getProfData();
 }, [])
 
+const [depPost, setDepPost] = useState();
+
+
+
+
+
 
     return (
         <div>
             <Navbar />
             <div>
-                <Outlet context={[itemSell, profile,]} />
+                <Outlet context={[itemSell, profile, setProfile, depPost, setDepPost]} />
             </div>
         </div>
     )

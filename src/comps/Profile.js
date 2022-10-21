@@ -5,7 +5,7 @@ import {  Link, useOutletContext } from 'react-router-dom';
 
 const Profile = () => {
     const contextData = useOutletContext();
-    // console.log(contextData)
+    console.log(contextData)
     const profile = contextData[1];
     console.log('this is profile', profile)
 //     const [ profile, setProfile ] = useState();
@@ -55,15 +55,16 @@ const Profile = () => {
         return (
 
             <div>
-                <h4 className='center'>Here you can view all your posts</h4>
+                <h4 className='center main'>Here you can view all your posts</h4>
                 <div>
                     {
                         profile.username.length ? <div> {profile.username}</div>:<p>NOthing</p>
                     }
                  {
-                    profile.posts  ? profile.posts.map((indivPost, idx) => {
-                        
+                         profile.posts.length  ? profile.posts.map((indivPost, idx) => {
+
                         return(
+                            indivPost.active ? 
                             <div className='postDiv' key={idx}>
                                 <div>
                                     <p className='mainItem p'>Item: {indivPost.title}</p>
@@ -74,15 +75,18 @@ const Profile = () => {
                                  <div>
                                     <p className='p'>Description: {indivPost.description}</p>
                                  </div>
-                                  <button onClick={() => {
+                                  <button className='blue' onClick={() => {
                                     setPostId(indivPost._id)
                                     deletePost
                                     // console.log(postId)
                                   }}>
                                     <label typeof='submit'>Delete</label>
                                  </button>
+                                 <button className='blue linkButton'>
+                                    <Link to={`/profile/${indivPost._id}`}>More Info</Link>
+                                 </button>
                                  {/* {console.log(indivPost._id)} */}
-                              </div>
+                              </div>:<p className='deletedP'>This post is deleted</p>
                         )
                     }) :<p>You have no posts to show, get selling now!</p>
                 }

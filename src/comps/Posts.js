@@ -5,8 +5,9 @@ import { useOutletContext, Link, useParams } from "react-router-dom";
 const Posts = () => {
     const itemSell = useOutletContext();
     // console.log('this is )
+
     const sell = itemSell[0];
-    console.log('this is sell', sell)
+    // console.log('this is sell', sell)
     return (
          sell ? sell.map((indivPost, idx) => {
             // console.log('this is indivpost', indivPost)
@@ -20,7 +21,7 @@ const Posts = () => {
                         <p className="p price">Price: {indivPost.price}</p>
                     </div>
                     <div>
-                        <button className="linkButton">
+                        <button className="linkButton blue">
                              <Link className="linkInButton link" to={`/posts/${idx}`}>More Info</Link>
                         </button>
                     </div>

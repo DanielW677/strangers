@@ -5,6 +5,16 @@ body{
 .center{
     text-align: center;
 }
+.blue{
+    color: blue;
+}
+.time{
+    font-size: xx-small;
+}
+.mainItem{
+    font-weight: bold;
+    font-size: xx-large;
+}
 .p{
     font-size: x-large;
     
@@ -54,4 +64,15 @@ body{
 }
 .makePost{
     padding-top: 3vh;
+}
+.main{
+    font-weight: bold;
+    font-size: xx-large;
+    color: blue;
+}
+.createTime{
+    font-size: 15px;
+}
+.deletedP{
+    display: none;
 }

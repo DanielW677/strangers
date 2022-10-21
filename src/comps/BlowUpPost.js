@@ -1,5 +1,6 @@
 import React from "react";
 import { useOutletContext, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const BigPost = () => {
     const postData = useOutletContext();
@@ -29,6 +30,11 @@ const BigPost = () => {
             <h6 className="p">Post Created at: {specificPost.createdAt}</h6>
             <h5 className="p">Located at {specificPost.location}</h5>
              </div>
+             <form>
+                <label> Msg User</label>
+                <input type='text'></input>
+                <input type='submit'></input>
+             </form>
         </div>
     )
 }
