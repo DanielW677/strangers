@@ -62,7 +62,7 @@ const Profile = () => {
                     }
                  {
                          profile.posts.length  ? profile.posts.map((indivPost, idx) => {
-
+                            console.log(indivPost, 'this is indiv')
                         return(
                             indivPost.active ? 
                             <div className='postDiv' key={idx}>
@@ -75,6 +75,12 @@ const Profile = () => {
                                  <div>
                                     <p className='p'>Description: {indivPost.description}</p>
                                  </div>
+                                {
+                                    indivPost.messages.length ? 
+                                    <div> 
+                                        <p>Messages: {indivPost.messages}</p>
+                                    </div>: <p>You have no messages about this item</p>
+                                }
                                   <button className='blue' onClick={() => {
                                     setPostId(indivPost._id)
                                     deletePost

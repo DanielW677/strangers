@@ -14,7 +14,7 @@ const BigPost = () => {
     
     // const outParams = useParams().id;
     // console.log('this is params', useParams())
-    console.log('other params', id)
+    // console.log('other params', id)
 
     
     const specificPost = bigData[id];
@@ -42,7 +42,7 @@ const BigPost = () => {
         console.log(error)
          }}
     MessageUser();
-    console.log('this is post', specificPost);
+    // console.log('this is post', specificPost);
     return (
         <div>
             <div>
