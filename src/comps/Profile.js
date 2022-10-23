@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import {  Link, useOutletContext } from 'react-router-dom';
+import {  Link, useOutletContext, useNavigate } from 'react-router-dom';
 
 
 
@@ -8,6 +8,7 @@ const Profile = () => {
     console.log(contextData)
     const profile = contextData[1];
     console.log('this is profile', profile)
+    const navigate = useNavigate();
 //     const [ profile, setProfile ] = useState();
 //     useEffect(() => { 
 //     async function getProfData () {
@@ -44,7 +45,6 @@ const Profile = () => {
             console.log(deleteFetch)
             const betterData =  await deleteFetch.json()
             console.log(betterData)
-
         } catch (error) {
             console.log(error)
         }
